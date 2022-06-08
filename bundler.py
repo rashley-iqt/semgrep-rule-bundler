@@ -33,12 +33,12 @@ def get_rules_on_path(path, rules):
 def main():
     args = setup()
     outfile = args.outfile
-    path = args.path
+    path = os.path.join("/bundler/rules/",args.path)
     
     # directory = "output/" + organization
     # if not os.path.exists(directory):
     #     os.makedirs(directory)
-
+    print(f"Writing rules to {outfile}")
     try:
         rules = list()
         print(f"Gathering rules from path: {path} \n\n")
