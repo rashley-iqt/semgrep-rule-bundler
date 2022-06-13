@@ -5,7 +5,7 @@ COPY bundler.py .
 COPY requirements.txt .
 
 RUN apt-get update && apt-get install -y --no-install-recommends git gcc libc-dev && \
-	python3 -m pip install --upgrade pip
+    python3 -m pip install --upgrade pip
 RUN python3 -m pip install -r requirements.txt
 
 WORKDIR /bundler/rules

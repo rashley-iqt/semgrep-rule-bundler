@@ -1,5 +1,6 @@
 import argparse
 import os
+import re
 import sys
 
 from ruamel.yaml import YAML
@@ -15,12 +16,11 @@ def setup():
     return args
 
 def get_rules_on_path(path, rules):
-    exts = ('.yaml', '.yml')
     for root, dirs, files in os.walk(path):
         print(f"file count: {len(files)}")
         for filename in files:
             full_path = os.path.join(root,filename)
-            if filename.endswith(exts):
+            if re.search("[^\.test]\.ya?ml$", filename):
                 with open(full_path, 'r') as stream:
                     print(f"loading rules from {filename}")
                     content = yaml.load(stream)
