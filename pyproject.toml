@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "semgrep-rule-bundler"
+version = "0.1.0"
+description = "bundle rules by language for later use"
+authors = ["Ryan <rashley@iqt.org>"]
+license = "Apache 2"
+readme = "README.md"
+packages = [{include = "semgrep_rule_bundler"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+"ruamel.yaml" = "0.17.21"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
